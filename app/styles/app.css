@@ -6,13 +6,28 @@ html, body {
 body {
   padding-top: 50px;
 }
-.starter-template {
-  padding: 40px 15px;
+
+/*
+  Application Index Route
+*/
+
+.qwizkool-banner-img {
+  font-size: 15em;
+}
+
+.qwizkool-banner-quote {
+  margin-top:10px;
+  border-left: none
+}
+
+/*
+  Qwizbooks Routes
+*/
+.search-control {
 
 }
-.search-control {
-  padding-bottom: 10px;
-}
+
+
 .center-block {
   float: none;
   padding-bottom: 10px;

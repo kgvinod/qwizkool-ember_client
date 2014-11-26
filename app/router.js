@@ -6,12 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
   this.resource('qwizbooks', function() {
-
-  this.route('new');
-
+      this.route('new');
   });
-  //this.route('qwizbooks/new');
+
+  this.route('qwizbooks/new');
 });
 
 export default Router;

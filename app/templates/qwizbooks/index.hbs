@@ -1,7 +1,44 @@
-<h1>Qwizbooks Index</h1>
+<div class="container">
+  <div class="row">
 
-<ul>
-  {{#each}}
-     <li>{{title}} {{subtitle}}</li>
-  {{/each}}
-</ul>
+    {{#each}}
+      <div class="panel panel-default" style="padding:10px">
+        <div class="row">
+          <div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
+            {{#if hasImageUrl}}
+            <img src="http://bootsnipp.com/apple-touch-icon-114x114-precomposed.png" alt="bootsnipp"
+            class="img-rounded img-responsive" />
+            </button>
+            {{else}}
+                <i class="fa fa-question-circle fa-5x"></i>
+            {{/if}}
+
+          </div>
+          <div class="col-xs-9 col-md-9 section-box">
+            <h2>
+              {{title}}
+            </h2>
+            <h5>
+              {{subtitle}}
+            </h5>
+            <p>
+              {{description}}
+            </p>
+            <hr />
+            <div class="row rating-desc">
+              <div class="col-md-12">
+                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                </span><span class="glyphicon glyphicon-heart"></span>(36)<span class="separator">|</span>
+                <span class="glyphicon glyphicon-comment"></span>(100 Comments)
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+</div>
