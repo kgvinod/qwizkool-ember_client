@@ -29,11 +29,16 @@
 </div>
   <div class="row well">
     <div class="input-group search-control">
-      <input type="text" class="form-control">
+
+      {{!-- The value "search is defined as query param in the index controller" --}}
+      {{ input type="text" class="form-control"  placeholder="Search Qwizbooks" value=search}}
+
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-          <span class="glyphicon glyphicon-search"></span>
+        
+        <button class="btn btn-default" type="button" {{action "clearSearch" }}>
+          <span class="fa fa-times fa-1x"></span>
         </button>
+
       </span>
     </div>
   </div><!-- /input-group -->
