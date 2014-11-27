@@ -20,6 +20,7 @@ body {
   border-left: none
 }
 
+
 /*
   Qwizbooks Routes
 */
@@ -27,6 +28,9 @@ body {
 
 }
 
+.qwizbook-summary-item {
+  padding:10px;
+}
 
 .center-block {
   float: none;
