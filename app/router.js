@@ -11,7 +11,7 @@ Router.map(function() {
       this.route('new');
   });
 
-  this.route('qwizbooks/new');
+  
 });
 
 export default Router;

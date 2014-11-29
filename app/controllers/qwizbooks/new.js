@@ -11,7 +11,12 @@ export default Ember.ObjectController.extend({
     save: function() {
       if (this.get('isValid')) {
         var _this = this;
-        this.get('model').save();
+        this.get('model').save().then(function(qwizbook){
+        //  _this.transitionToRoute('friends.show', friend);
+          _this.transitionToRoute('qwizbooks');
+
+        });
+
       } else {
         this.set('errorMessage', 'You have to fill all the fields');
       }
@@ -19,7 +24,7 @@ export default Ember.ObjectController.extend({
 
     },
     cancel: function() {
-      console.log('+- cancel action in friends new controller');
+      this.transitionToRoute('qwizbooks');
       return true;
     }
   }
