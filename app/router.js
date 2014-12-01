@@ -9,9 +9,9 @@ Router.map(function() {
 
   this.resource('qwizbooks', function() {
       this.route('new');
+      this.route('detail', { path: ':qwizbook_id' });
   });
 
-  
 });
 
 export default Router;
