@@ -11,7 +11,7 @@ export default Ember.ObjectController.extend({
     save: function() {
       if (this.get('isValid')) {
         var _this = this;
-        this.get('model').save().then(function(qwizbook){
+        this.get('model').save().then(function(/*qwizbook*/){
         // this.get('model').save().then(function(qwizbook){
         //  _this.transitionToRoute('qwizbook.show', qwizbook);
           _this.transitionToRoute('qwizbooks');
