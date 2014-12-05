@@ -12,7 +12,8 @@ export default Ember.ObjectController.extend({
       if (this.get('isValid')) {
         var _this = this;
         this.get('model').save().then(function(qwizbook){
-        //  _this.transitionToRoute('friends.show', friend);
+        // this.get('model').save().then(function(qwizbook){
+        //  _this.transitionToRoute('qwizbook.show', qwizbook);
           _this.transitionToRoute('qwizbooks');
 
         });

@@ -9,7 +9,9 @@ Router.map(function() {
 
   this.resource('qwizbooks', function() {
       this.route('new');
-      this.route('detail', { path: ':qwizbook_id' });
+      this.route('detail', { path: ':qwizbook_id' }, function() {
+        this.resource('qwizbookSections',function() {});
+      });
   });
 
 });

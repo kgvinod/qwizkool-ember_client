@@ -12,5 +12,5 @@ export default DS.Model.extend({
   createdOn:    DS.attr('date',{
     defaultValue: function() { return new Date(); }}),
   public:          DS.attr('boolean'),
-
+  qwizbookSections: DS.hasMany('qwizbook-section')
 });
