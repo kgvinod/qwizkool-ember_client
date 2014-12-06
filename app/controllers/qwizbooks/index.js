@@ -9,8 +9,13 @@ export default Ember.ArrayController.extend({
     clearSearch: function () {
       this.set('search',null);
       console.log("Hello");
+    },
+    addQwizbook: function () {
+      this.transitionToRoute('qwizbooks.new');
+    },
+    showDetail: function (qwizbook) {
+      this.transitionToRoute('qwizbooks.detail',qwizbook);
     }
-
 
   }
 

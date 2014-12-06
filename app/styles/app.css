@@ -51,6 +51,12 @@ body {
   padding:10px;
 }
 
+.btn-toolbar {
+  padding-top:5px;
+}
 
 /* Bootstrap override */
-.breadcrumb {background: rgba(255, 255, 255, 1);
+.breadcrumb {
+  background: rgba(255, 255, 255, 1);
+  padding: 20px 0px;
+}
