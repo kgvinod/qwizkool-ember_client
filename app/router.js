@@ -7,12 +7,22 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
 
+
+  // Summary index view of the qwizbooks
   this.resource('qwizbooks', function() {
+      // create a new qwizbook
       this.route('new');
+
+      // Detail view of the qwizbook
       this.route('detail', { path: ':qwizbook_id' }, function() {
       });
+
+      // Qwiz view
       this.route('qwiz',function() {});
-      
+
+      // Edit the qwizbooks and its components
+      this.route('edit', { path: ':qwizbook_id/edit' }, function() {});
+
   });
 
 });
@@ -53,5 +63,6 @@ this.resource('qwizbooks', function() {
 
 
   this.route('qwizbooks/qwiz');
+  this.route('qwizbooks/edit');
 });
 */
