@@ -14,14 +14,15 @@ Router.map(function() {
       this.route('new');
 
       // Detail view of the qwizbook
-      this.route('detail', { path: ':qwizbook_id' }, function() {
-      });
+      this.route('detail', { path: ':qwizbook_id' });
 
       // Qwiz view
-      this.route('qwiz',function() {});
+      this.route('qwiz');
 
       // Edit the qwizbooks and its components
-      this.route('edit', { path: ':qwizbook_id/edit' }, function() {});
+      this.route('edit', { path: ':qwizbook_id/edit' }, function() {
+        this.resource('qwizbookSections',function() {});
+      });
 
   });
 

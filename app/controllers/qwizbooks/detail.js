@@ -6,8 +6,11 @@ export default Ember.ObjectController.extend({
     startQwiz: function () {
       this.transitionToRoute('qwizbooks.qwiz');
     },
+
     editQwizbook: function (qwizbook) {
-      this.transitionToRoute('qwizbooks.edit',qwizbook);
+      // qwizbookSections is rendered on the outlet of edit
+      // hence directly refer to that route!!
+      this.transitionToRoute('qwizbookSections',qwizbook);
     }
 
   }
