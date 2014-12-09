@@ -65,5 +65,6 @@ this.resource('qwizbooks', function() {
 
   this.route('qwizbooks/qwiz');
   this.route('qwizbooks/edit');
+  this.resource('QwizbookPages', function() { });
 });
 */
