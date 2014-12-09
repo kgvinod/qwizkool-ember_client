@@ -17,7 +17,14 @@
         <label for="sectionTitle">Title</label>
         {{ input type="text" class="form-control" id="sectionTitle" placeholder="Title" value=title }}
       </div>
-      <button type="submit"  value="Save" class="btn btn-default">Save</button>
+      {{!-- <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input id="starting-section" type="checkbox" name="startingSection" value="1"> Starting Section?
+          </label>
+        </div>
+      </div> --}}
+      <button type="submit"  value="Save" class="btn btn-default">Add New Section</button>
       <button class="btn btn-default"  {{action "disableSectionAddForm"}} >Cancel</button>
     </form>
    </div>
