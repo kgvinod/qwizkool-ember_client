@@ -5,12 +5,11 @@ export default Ember.Route.extend({
     return this.store.createRecord('qwizbook');
   },
   actions: {
-save: function() {
-      console.log('+-- save action bubbled up to friends new route');
-return true; },
-cancel: function() {
-console.log('+-- cancel action bubbled up to friends new route');
-return true; }
-}
-
+    save: function() {
+      return true;
+    },
+    cancel: function() {
+      return true;
+    }
+  }
 });
