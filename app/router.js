@@ -21,7 +21,10 @@ Router.map(function() {
 
       // Edit the qwizbooks and its components
       this.route('edit', { path: ':qwizbook_id/edit' }, function() {
-        this.resource('qwizbookSections',function() {});
+        this.resource('qwizbookSections',function() {
+          // create qwizbook section
+          this.route('new');
+        });
       });
 
   });
@@ -66,5 +69,6 @@ this.resource('qwizbooks', function() {
   this.route('qwizbooks/qwiz');
   this.route('qwizbooks/edit');
   this.resource('QwizbookPages', function() { });
+  this.route('QwizbookSections/new');
 });
 */

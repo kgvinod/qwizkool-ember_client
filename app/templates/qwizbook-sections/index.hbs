@@ -3,39 +3,9 @@
     <h2>Sections </h2>
     <hr/>
 
-    {{#if isSectionAddFormEnabled}}
-
-    <div class="panel panel-primary">
-    <div class="panel-heading clearfix">
-      <div class="panel-title">Add a new section</div>
-      <p class="bg-danger">{{errorMessage}}</p>
+    <div class="btn-group btn-addSection" role="group">
+      <button type="button" class="btn btn-default btn-danger" {{action "addNewSection" this }}>Add Section</button>
     </div>
-    <div class="panel-body">
-
-    <form role="form" {{action "saveSection" on="submit"}}>
-      <div class="form-group">
-        <label for="sectionTitle">Title</label>
-        {{ input type="text" class="form-control" id="sectionTitle" placeholder="Title" value=title }}
-      </div>
-      {{!-- <div class="form-group">
-        <div class="checkbox">
-          <label>
-            <input id="starting-section" type="checkbox" name="startingSection" value="1"> Starting Section?
-          </label>
-        </div>
-      </div> --}}
-      <button type="submit"  value="Save" class="btn btn-default">Add New Section</button>
-      <button class="btn btn-default"  {{action "disableSectionAddForm"}} >Cancel</button>
-    </form>
-   </div>
- </div>
-
-    {{else}}
-      <div class="btn-group btn-addSection" role="group">
-        <button type="button" class="btn btn-default btn-danger" {{action "enableSectionAddForm" }}>Add Section</button>
-      </div>
-    {{/if}}
-
 
   {{#each section in model}}
 
