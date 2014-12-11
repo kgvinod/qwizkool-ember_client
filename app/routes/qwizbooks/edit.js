@@ -8,12 +8,13 @@ export default Ember.Route.extend({
       var model = this.modelFor('qwizbooks/detail');
 
       model.save().then(function(){
-        _this.transitionTo('qwizbooks');
+        _this.transitionTo('qwizbooks.detail', model);
       });
 
     },
     cancel: function() {
-      this.transitionTo('qwizbooks');
+      var model = this.modelFor('qwizbooks/detail');
+      this.transitionTo('qwizbooks.detail',model);
     }
   }
 });
