@@ -6,10 +6,17 @@ export default Ember.Route.extend({
   },
   actions: {
     save: function() {
-      return true;
+      var _this = this;
+      var model = this.modelFor('qwizbooks/new');
+
+      model.save().then(function(){
+        _this.transitionTo('qwizbooks');
+      });
+
     },
     cancel: function() {
-      return true;
+      this.modelFor('qwizbooks/new').deleteRecord();
+      this.transitionTo('qwizbooks');
     }
   }
 });

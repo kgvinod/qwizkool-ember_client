@@ -14,7 +14,6 @@ export default Ember.Route.extend({
     },
     cancel: function() {
       this.transitionTo('qwizbooks');
-      return true;
     }
   }
 });

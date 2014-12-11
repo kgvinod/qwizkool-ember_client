@@ -17,8 +17,9 @@ export default Ember.Route.extend({
 
     },
     cancel: function() {
+      this.modelFor('qwizbookSections/new').deleteRecord();
+
       this.transitionTo('qwizbookSections');
-      return true;
     }
   }
 });
