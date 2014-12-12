@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   },
   actions: {
     addNewSection: function (qwizbook) {
-      this.transitionTo('qwizbookSections.new', qwizbook);;
+      this.transitionTo('qwizbookSections.new', qwizbook);
     },
 
   }
