@@ -21,10 +21,11 @@ Router.map(function() {
 
       // Edit the qwizbooks and its components
       this.route('edit', { path: ':qwizbook_id/edit' }, function() {
-        this.resource('qwizbookSections',function() {
-          // create qwizbook section
-          this.route('new');
-        });
+      });
+
+      this.resource('qwizbookSections', { path: '/:qwizbook_id/qwizbookSections' },function() {
+        // create qwizbook section
+        this.route('new');
       });
 
   });

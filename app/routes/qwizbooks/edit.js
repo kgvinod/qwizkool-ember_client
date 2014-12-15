@@ -15,6 +15,11 @@ export default Ember.Route.extend({
     cancel: function() {
       var model = this.modelFor('qwizbooks/detail');
       this.transitionTo('qwizbooks.detail',model);
-    }
+    },
+    editSections: function () {
+      var model = this.modelFor('qwizbooks/detail');
+      console.log(model.id);
+      this.transitionTo('qwizbookSections', model.id);
+    },
   }
 });
