@@ -12,7 +12,7 @@ export default Ember.ObjectController.extend({
         return true;
       } else {
         this.set('errorMessage', 'You have to fill all the fields');
-        return true;
+        return false;
       }
     }
   }

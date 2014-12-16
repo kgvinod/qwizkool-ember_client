@@ -15,6 +15,10 @@ export default Ember.ObjectController.extend({
         this.set('errorMessage', 'You have to fill all the fields');
         return false;
       }
+    },
+    cancel: function() {
+      this.get('model').rollback();
+      return true;
     }
   }
 

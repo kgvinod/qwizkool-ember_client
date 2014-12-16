@@ -3,7 +3,7 @@
     <ol class="breadcrumb">
       <li>{{#link-to "qwizbooks.index"  class="active" }}Qwizbooks{{/link-to}}</li>
       <li><a>Qwizbook</a></li>
-      <li><a>Edit Qwizbook</a></li>
+      <li><a>Edit Section</a></li>
     </ol>
   </div>
 </div>
@@ -12,13 +12,13 @@
   <div class="row">
     <div class="pull-right">
       <div class="btn-group btn-addSection" role="group">
-        <button type="button" class="btn btn-default btn-danger" {{action "editSections"  }}>Edit Sections</button>
+        <button type="button" class="btn btn-default btn-danger" {{action "editPages"  }}>Edit Pages</button>
       </div>
     </div>
   </div>
 </div>
 
-{{partial "qwizbooks/form"}}
+{{partial "qwizbook-sections/form"}}
 
 
 {{outlet}}
