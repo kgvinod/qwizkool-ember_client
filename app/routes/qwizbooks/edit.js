@@ -17,9 +17,9 @@ export default Ember.Route.extend({
       this.transitionTo('qwizbooks.detail',model);
     },
     editSections: function () {
-      var model = this.modelFor('qwizbooks/detail');
-      console.log(model.id);
-      this.transitionTo('qwizbookSections', model.id);
+      var qwizbook = this.controller.get('model');
+      var sections = qwizbook.get('qwizbookSections');
+      this.transitionTo('qwizbookSections',qwizbook);
     },
   }
 });

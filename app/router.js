@@ -23,12 +23,19 @@ Router.map(function() {
       this.route('edit', { path: ':qwizbook_id/edit' }, function() {
       });
 
-      this.resource('qwizbookSections', { path: '/:qwizbook_id/qwizbookSections' },function() {
-        // create qwizbook section
-        this.route('new');
-        this.route('edit', { path: ':qwizbookSection_id/edit' });
-      });
 
+  });
+
+  this.resource('qwizbookSections', { path: '/:qwizbook_id/' },function() {
+    // create qwizbook section
+    this.route('new', { path: '/qwizbookSection/new' });
+    this.route('edit', { path: '/qwizbookSection/:qwizbookSection_id/edit' });
+  });
+
+  this.resource('qwizbookPages', { path: '/:qwizbookSection_id/' },function() {
+    // create qwizbook section
+    //this.route('new');
+    //  this.route('edit', { path: ':qwizbookSection_id/edit' });
   });
 
 });
