@@ -3,7 +3,9 @@ import sys, os
 
 # Add a custom Python path.
 sys.path.insert(0, "/home2/qwizkool/python/")
-sys.path.insert(13, "/home2/qwizkool/work/bala/server-apps/django-rest-server/")
+
+# Modify this to your django app path
+sys.path.insert(13, "/home2/qwizkool/django-rest-server/")
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'rest_api.settings'
 from django.core.servers.fastcgi import runfastcgi
