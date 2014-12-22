@@ -1,17 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
-    //console.log(this.store.find('qwizbook',id).get('qwizbookSections'));
-    //  return this.store.find('qwizbook',id).get('qwizbookSections');
+  model: function() {
     return this.modelFor('qwizbooks.detail').get('qwizbookSections');
-
   },
 
   actions: {
     addNewSection: function () {
-      var model = this.modelFor('qwizbooks/detail');
-      this.transitionTo('qwizbookSections.new', model);
+      this.transitionTo('qwizbookSections.new');
     },
     editQwizbookSection: function (section) {
       // qwizbookSections is rendered on the outlet of edit

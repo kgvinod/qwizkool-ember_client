@@ -26,13 +26,13 @@ Router.map(function() {
 
   });
 
-  this.resource('qwizbookSections', { path: '/:qwizbook_id/' },function() {
+  this.resource('qwizbookSections', function() {
     // create qwizbook section
     this.route('new', { path: '/qwizbookSection/new' });
     this.route('edit', { path: '/qwizbookSection/:qwizbookSection_id/edit' });
   });
 
-  this.resource('qwizbookPages', { path: '/:qwizbookSection_id/' },function() {
+  this.resource('qwizbookPages', function() {
     // create qwizbook section
     //this.route('new');
     //  this.route('edit', { path: ':qwizbookSection_id/edit' });
