@@ -28,13 +28,14 @@ Router.map(function() {
 
   this.resource('qwizbookSections', function() {
     // create qwizbook section
-    this.route('new', { path: '/qwizbookSection/new' });
-    this.route('edit', { path: '/qwizbookSection/:qwizbookSection_id/edit' });
+    this.route('new');
+    this.route('edit', { path: ':qwizbookSection_id/edit' });
   });
 
   this.resource('qwizbookPages', function() {
-    // create qwizbook section
-    //this.route('new');
+    // create qwizbook Page
+    this.route('new');
+    this.route('edit', { path: ':qwizbookPage_id/edit' });
     //  this.route('edit', { path: ':qwizbookSection_id/edit' });
   });
 
@@ -80,5 +81,7 @@ this.resource('qwizbooks', function() {
   this.resource('QwizbookPages', function() { });
   this.route('QwizbookSections/new');
   this.route('QwizbookSections/edit');
+  this.route('qwizbookPages/new');
+  this.route('qwizbookPages/edit');
 });
 */

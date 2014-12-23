@@ -38,14 +38,15 @@
       <div class="panel panel-default">
         {{/if}}
         <div class="panel-heading clearfix">
+          <div>   {{page.type }} </div>
           <div class="pull-right">
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default " {{ action "editQwizbookSection" section }}><i class="fa fa-pencil fa-1x"></i></button>
+              <button type="button" class="btn btn-default " {{ action "editQwizbookPage" page }}><i class="fa fa-pencil fa-1x"></i></button>
             </div>
           </div>
         </div>
         <div class="panel-body">
-          {{page.title }}
+          {{page.text }}
         </div>
       </div>
       {{/each}}
