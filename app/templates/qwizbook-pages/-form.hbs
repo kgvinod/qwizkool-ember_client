@@ -9,24 +9,132 @@
 
         <form role="form" {{action "save" on="submit"}}>
           <div class="form-group">
-            <label for="pageType">Type</label>
+            <label for="pageType" class="control-label">Page Type</label>
             {{view "Ember.Select"
             content=types
             value=type
             class="form-control" id="pageType"
-            }}
-          </div>
+          }}
+        </div>
 
-          <div class="form-group">
-            <label for="pageText">Text</label>
-            {{ textarea  class="form-control" type="text" id="pageText"   placeholder="Text" value=text rows="10" }}
+        <div class="form-group">
+          <label for="pageText" class="control-label">Question Text</label>
+          {{ textarea  class="form-control" type="text" id="pageText"   placeholder="Text" value=text rows="10" }}
+        </div>
+
+        <div class="form-group">
+          <div class="btn-group btn-addSection" role="group">
+            <button type="button" class="btn btn-default btn-danger" {{action "addNewMediaElements" }}>Add Media Elements</button>
           </div>
-          <div class="form-group">
+        </div>
+        {{#each mediaElement in model.mediaUrls itemController="media-urls/item"}}
+          <div class="well">
+            <div class="form-group">
+              <label  class="control-label">Media Type</label>
+              {{view "Ember.Select"
+              content=mediaElement.urlTypes
+              value=mediaElement.type
+              selection=mediaElement.type
+              class="form-control"
+            }}
+            <label  style="margin-top: 10px" class="control-label">Text</label>
+            {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.text }}
+            <label  style="margin-top: 10px" class="control-label">URL</label>
+            {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.mediaUrl }}
           </div>
-          <button type="submit"  value="Save" class="btn btn-default">Save</button>
-          <button class="btn btn-default"  {{action "cancel"}} >Cancel</button>
-        </form>
+        </div>
+      {{/each}}
+      <button type="submit"  value="Save" class="btn btn-default">Save</button>
+      <button class="btn btn-default"  {{action "cancel"}} >Cancel</button>
+    </form>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="panel panel-primary">
+
+    <div class="panel-heading clearfix">
+      <div class="panel-title">Preview - {{type}}</div>
+      <u class="lead">{{errorMessage}}</u>
+    </div>
+
+    <div class="panel-body">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+        <div class="box">
+
+          <div class="box-icon">
+            {{#if typeIsQuestion}}
+            <span class="fa fa-4x fa-question-circle"></span>
+            {{/if}}
+            {{#if typeIsReference}}
+            <span class="fa fa-4x fa-list"></span>
+            {{/if}}
+            {{#if typeIsReinforcement}}
+            <span class="fa fa-4x fa-space-shuttle"></span>
+            {{/if}}
+
+          </div>
+          <div class="info">
+            {{#if typeIsQuestion}}
+            <h4 class="text-left">Question</h4>
+            {{else}}
+            <h4 class="text-left">Description</h4>
+            {{/if}}
+            <hr/>
+            <p>{{text}}</p>
+          </div>
+          {{!-- <div class="embed">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/ODkQRVKNh-Y" frameborder="0" allowfullscreen></iframe>
+          </div> --}}
+          {{#each mediaElement in model.mediaUrls itemController="media-urls/item"}}
+
+          {{#if mediaElement.typeIsImage}}
+          <div class="well">
+              <img class="img-responsive img-center" alt="Responsive image" {{bind-attr src="mediaElement.mediaUrl" }}>
+              <div class="text-center">
+                <h5>Image: {{mediaElement.text}}</h5>
+              </div>
+          </div>
+          {{/if}}
+          {{#if mediaElement.typeIsVideo}}
+          <div class="">
+            <div class="embed">
+              {{mediaElement.mediaUrl}}
+            </div>
+            <div class="text-center">
+              <h5>Image: {{mediaElement.text}}</h5>
+            </div>
+          </div>
+          {{/if}}
+
+          {{/each}}
+
+        </div>
+
+
       </div>
     </div>
   </div>
 </div>
+
+</div>
+
+{{!-- <div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="box">
+<div class="box-icon">
+<span class="fa fa-4x fa-html5"></span>
+</div>
+<div class="info">
+<h4 class="text-center">Title</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
+<a href="" class="btn">Link</a>
+</div>
+</div>
+</div>
+</div>
+</div> --}}
