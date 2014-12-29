@@ -9,28 +9,38 @@ Router.map(function() {
 
 
   // Summary index view of the qwizbooks
-  this.resource('qwizbooks', function() {
-      // create a new qwizbook
-      this.route('new');
+  // this.resource('qwizbooks', function() {
+  //     // create a new qwizbook
+  //     this.route('new');
+  //
+  //     // Detail view of the qwizbook
+  //     this.route('detail', { path: ':qwizbook_id' });
+  //
+  //     // Qwiz view
+  //     this.route('qwiz');
+  //
+  //     // Edit the qwizbooks and its components
+  //     this.route('edit', { path: ':qwizbook_id/edit' }, function() {
+  //     });
+  //
+  //
+  // });
 
-      // Detail view of the qwizbook
-      this.route('detail', { path: ':qwizbook_id' });
+  this.resource('qwizbooks',function() {});
+  this.route('qwizbooks.detail', { path: 'qwizbooks/:qwizbook_id/' });
+  this.route('qwizbooks.edit', { path: 'qwizbooks/:qwizbook_id/edit' });
+  this.route('qwizbooks.new', { path: 'qwizbooks/new' });
+  this.route('qwizbooks.qwiz', { path: 'qwizbooks/:qwizbook_id/qwiz' });
+  this.route('qwizbookSections.edit', { path: 'qwizbooks/:qwizbook_id/qwizbookSections/:qwizbookSection_id/edit' });
+  this.resource('qwizbookSections',{ path: 'qwizbooks/:qwizbook_id/qwizbookSections' },function() {});
+  this.route('qwizbookSections.new', { path: 'qwizbooks/:qwizbook_id/qwizbookSections/new' });
 
-      // Qwiz view
-      this.route('qwiz');
 
-      // Edit the qwizbooks and its components
-      this.route('edit', { path: ':qwizbook_id/edit' }, function() {
-      });
-
-
-  });
-
-  this.resource('qwizbookSections', function() {
+//  this.resource('qwizbookSections', function() {
     // create qwizbook section
-    this.route('new');
-    this.route('edit', { path: ':qwizbookSection_id/edit' });
-  });
+//    this.route('new');
+    //this.route('edit', { path: ':qwizbookSection_id/edit' });
+//  });
 
   this.resource('qwizbookPages', function() {
     // create qwizbook Page

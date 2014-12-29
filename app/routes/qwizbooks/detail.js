@@ -1,19 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
-      return this.store.find('qwizbook',params.qwizbook_id);
-  },
+
   actions: {
 
-    startQwiz: function () {
-      this.transitionTo('qwizbooks.qwiz');
+    startQwiz: function (qwizbook) {
+      this.transitionTo('qwizbooks.qwiz',qwizbook);
     },
 
     editQwizbook: function (qwizbook) {
       // qwizbookSections is rendered on the outlet of edit
       // hence directly refer to that route!!
-      this.transitionTo('qwizbooks.edit',qwizbook);
+      this.transitionTo('qwizbooks.edit',qwizbook.id);
     }
 
   }
