@@ -27,7 +27,7 @@ export default Ember.Route.extend({
     editQwizbookSection: function (section) {
       // qwizbookSections is rendered on the outlet of edit
       // hence directly refer to that route!!
-      var qwizbook = this.modelFor('qwizbooks/detail');
+      var qwizbook = this.controller.get('model');
       this.transitionTo('qwizbookSections.edit',qwizbook.id,section.id);
     }
   }

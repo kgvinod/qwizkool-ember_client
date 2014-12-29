@@ -31,9 +31,14 @@ Router.map(function() {
   this.route('qwizbooks.edit', { path: 'qwizbooks/:qwizbook_id/edit' });
   this.route('qwizbooks.new', { path: 'qwizbooks/new' });
   this.route('qwizbooks.qwiz', { path: 'qwizbooks/:qwizbook_id/qwiz' });
-  this.route('qwizbookSections.edit', { path: 'qwizbooks/:qwizbook_id/qwizbookSections/:qwizbookSection_id/edit' });
+
   this.resource('qwizbookSections',{ path: 'qwizbooks/:qwizbook_id/qwizbookSections' },function() {});
-  this.route('qwizbookSections.new', { path: 'qwizbooks/:qwizbook_id/qwizbookSections/new' });
+  this.route('qwizbookSections.new', { path: 'qwizbooks/:qwizbook_id/qwizbookSections/new'});
+  this.route('qwizbookSections.edit', { path: 'qwizbooks/:qwizbook_id/qwizbookSections/:qwizbookSection_id/edit'});
+
+  this.resource('qwizbookPages',{ path: 'qwizbooks/:qwizbook_id/qwizbookSections/:qwizbookSection_id/qwizbookPages' },function() {});
+  this.route('qwizbookPages.new',{ path: 'qwizbooks/:qwizbook_id/qwizbookSections/:qwizbookSection_id/qwizbookPages/new'});
+  this.route('qwizbookPages.edit',{ path: 'qwizbooks/:qwizbook_id/qwizbookSections/:qwizbookSection_id/qwizbookPages/:qwizbookPage_id/edit'});
 
 
 //  this.resource('qwizbookSections', function() {
@@ -42,12 +47,12 @@ Router.map(function() {
     //this.route('edit', { path: ':qwizbookSection_id/edit' });
 //  });
 
-  this.resource('qwizbookPages', function() {
-    // create qwizbook Page
-    this.route('new');
-    this.route('edit', { path: ':qwizbookPage_id/edit' });
-    //  this.route('edit', { path: ':qwizbookSection_id/edit' });
-  });
+  // this.resource('qwizbookPages', function() {
+  //   // create qwizbook Page
+  //   this.route('new');
+  //   this.route('edit', { path: ':qwizbookPage_id/edit' });
+  //   //  this.route('edit', { path: ':qwizbookSection_id/edit' });
+  // });
 
 });
 

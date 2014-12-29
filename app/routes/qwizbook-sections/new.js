@@ -13,16 +13,16 @@ export default Ember.Route.extend({
   actions: {
     save: function() {
       var _this = this;
-      var model=this.modelFor('qwizbookSections.new').get('qwizbook');      
+      var model=this.controller.get('model').get('qwizbook');
       model.save().then(function(m){
-        _this.modelFor('qwizbookSections.new').deleteRecord();
+        _this.controller.get('model').deleteRecord();
         _this.transitionTo('qwizbooks.edit',m);
       });
 
     },
     cancel: function() {
-      var qwizbook=this.modelFor('qwizbookSections.new').get('qwizbook');
-      this.modelFor('qwizbookSections.new').deleteRecord();
+      var qwizbook=this.controller.get('model').get('qwizbook');
+      this.controller.get('model').deleteRecord();
       this.transitionTo('qwizbooks.edit',qwizbook);
     }
   }

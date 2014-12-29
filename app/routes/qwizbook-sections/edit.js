@@ -12,17 +12,26 @@ export default Ember.Route.extend({
   actions: {
     save: function() {
       var _this = this;
-      var model=this.modelFor('qwizbookSections.edit').get('qwizbook');
+      var model=this.controller.get('model').get('qwizbook');
       model.save().then(function(m){
         _this.transitionTo('qwizbooks.edit',m);
       });
     },
     cancel: function() {
-      var qwizbook=this.modelFor('qwizbookSections.edit').get('qwizbook');
+      var qwizbook=this.controller.get('model').get('qwizbook');
+      var qwizbookSection=this.controller.get('model');
+      qwizbookSection.rollback();
       this.transitionTo('qwizbooks.edit',qwizbook.id);
     },
-    editPages: function () {
-      this.transitionTo('qwizbookPages');
+    addNewPage: function () {
+      var qwizbook=this.controller.get('model').get('qwizbook');
+      var qwizbookSection=this.controller.get('model');
+      this.transitionTo('qwizbookPages.new',qwizbook.id,qwizbookSection.id);
     },
+    editQwizbookPage: function (page) {
+      var qwizbook=this.controller.get('model').get('qwizbook');
+      var qwizbookSection=this.controller.get('model');
+      this.transitionTo('qwizbookPages.edit',qwizbook.id,qwizbookSection.id, page.id);
+    }
   }
 });

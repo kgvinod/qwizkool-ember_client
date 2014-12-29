@@ -8,17 +8,42 @@
   </div>
 </div>
 
+
+{{partial "qwizbook-sections/form"}}
 <div class="container">
   <div class="row">
+    <h1><small>Pages</small></h1>
+    <hr/>
     <div class="pull-right">
-      <div class="btn-group btn-addSection" role="group">
-        <button type="button" class="btn btn-default btn-danger" {{action "editPages"  }}>Edit Pages</button>
+      <div class="btn-group btn-section" role="group">
+        <button type="button" class="btn btn-default btn-danger" {{action "addNewPage"  }}>Add Pages</button>
       </div>
     </div>
   </div>
 </div>
 
-{{partial "qwizbook-sections/form"}}
+<div class="container">
 
+  <div class="row">
+
+    {{#each page in model.qwizbookPages}}
+
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <div>   {{page.type }} </div>
+        <div class="pull-right">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default " {{ action "editQwizbookPage" page }}><i class="fa fa-pencil fa-1x"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        {{page.text }}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+</div>
 
 {{outlet}}
