@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-    var promise = this.store.find('qwizbook',params.qwizbook_id);
+    this.store.find('qwizbook',params.qwizbook_id);
     return this.store.find('qwizbookPage',params.qwizbookPage_id);
   },
   actions: {

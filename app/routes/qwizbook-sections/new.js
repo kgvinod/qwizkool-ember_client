@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     var newSection=this.store.createRecord('qwizbookSection');
     this.store.find('qwizbook',params.qwizbook_id).then(function(m){
       newSection.set('qwizbook', m);
-    })
+    });
 
     return newSection;
   },

@@ -1,14 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
   model: function(params) {
     var _this=this;
     var newPage=this.store.createRecord('qwizbookPage');
-    this.store.find('qwizbook',params.qwizbook_id).then(function(m){
+    this.store.find('qwizbook',params.qwizbook_id).then(function(){
       _this.store.find('qwizbookSection',params.qwizbookSection_id).then(function(section){
         newPage.set('qwizbookSection', section);
     });
-    })
+  });
 
     return newPage;
   },

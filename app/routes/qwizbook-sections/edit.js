@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   model: function(params) {
     //TBD: Use the ID on the route to make sure the data is in store
     // Note sure this the correct approach.
-    var promise = this.store.find('qwizbook',params.qwizbook_id);
+    this.store.find('qwizbook',params.qwizbook_id);
     return this.store.find('qwizbookSection',params.qwizbookSection_id);
 
   },
