@@ -44,7 +44,7 @@ export default Ember.ObjectController.extend({
       }
     },
     addNewMediaElements:function() {
-      var _this=this
+      var _this=this;
 
       var mediaElement = this.store.createRecord('mediaUrl', {
         qwizbookPage: _this.get('model'),
