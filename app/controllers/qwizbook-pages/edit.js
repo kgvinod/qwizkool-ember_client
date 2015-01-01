@@ -17,19 +17,27 @@ export default Ember.ObjectController.extend({
   }.property('type'),
   actions: {
     save: function() {
-      return true;
+      if (this.get('isValid')) {
+        return true;
+      } else {
+        this.set('errorMessage', 'You have to fill all the fields');
+        return false;
+      }
+    },
+    addNewMediaElements:function() {
+      var _this=this;
+
+      var mediaElement = this.store.createRecord('mediaUrl', {
+        qwizbookPage: _this.get('model'),
+      });
+      this.get('mediaUrls').addObject(mediaElement);
+
+
     },
     cancel: function() {
       this.get('model').rollback();
       return true;
     },
-    addNewMediaElements:function() {
-      var mediaElement = this.get('store').createRecord('mediaUrl', {
-        qwizbookPage: this.get('model'),
-      });
 
-      this.get('mediaUrls').pushObject(mediaElement);
-
-    }
   }
 });

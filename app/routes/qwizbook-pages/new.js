@@ -19,8 +19,10 @@ export default Ember.Route.extend({
       var qwizbookSection=this.controller.get('model').get('qwizbookSection');
       var qwizbook= qwizbookSection.get('qwizbook');
       qwizbook.save().then(function(m){
+        var qwizbookId=qwizbook.get('id');
+        var qwizbookSectionId=qwizbookSection.get('id');
         _this.controller.get('model').deleteRecord();
-        _this.transitionTo('qwizbookSections.edit',m.id,qwizbookSection.id);
+        _this.transitionTo('qwizbookSections.edit',qwizbookId,qwizbookSectionId);
       });
     },
     cancel: function() {

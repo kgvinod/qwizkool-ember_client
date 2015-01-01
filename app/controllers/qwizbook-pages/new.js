@@ -35,7 +35,6 @@ export default Ember.ObjectController.extend({
   // ),
   actions: {
     save: function() {
-      // if (this.get('isValid') && this.get('isMediaUrlsValid')) {
       if (this.get('isValid')) {
         return true;
       } else {
@@ -53,6 +52,8 @@ export default Ember.ObjectController.extend({
 
 
     }
-  }
+
+
+}
 
 });
