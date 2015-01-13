@@ -64,11 +64,34 @@
           <label for="pageChoiceElements" class="control-label">Answer Choices</label>
           <div class="text-right">
             <div class="btn-group btn-section" id="pageChoiceElements" role="group">
-            <button type="button" class="btn btn-default btn-danger" {{action "addNewChoice" }}>Add Choice</button>
+            <button type="button" class="btn btn-default btn-danger" {{action "addNewChoiceElements" }}>Add Choice</button>
           </div>
         </div>
       </div>
-      <hr/>
+
+      {{#each choiceElement in model.choices itemController="media-urls/item"}}
+      <div class="well">
+        <h4>Choice:{{_view.contentIndex}} </h4>
+
+        <div class="form-group">
+        <label  style="margin-top: 10px" class="control-label">Answer Text</label>
+        {{ input type="text" class="form-control"  placeholder="URL" value=choiceElement.text }}
+
+        <label  style="margin-top: 10px" class="control-label">Media Text</label>
+        {{ input type="text" class="form-control"  placeholder="URL" value=choiceElement.mediaText }}
+        <label  style="margin-top: 10px" class="control-label">Image URL</label>
+        {{ input type="text" class="form-control"  placeholder="URL" value=choiceElement.mediaUrl }}
+        <div class="checkbox">
+          <label>
+            {{ input type="checkbox"   name="answer" checked=choiceElement.answer }} Answer ?
+          </label>
+        </div>
+
+      </div>
+    </div>
+    {{/each}}
+    <hr/>
+
       <div class="form-group">
         <label for="pageWeight" class="control-label">Question Weight</label>
         {{view "Ember.Select"

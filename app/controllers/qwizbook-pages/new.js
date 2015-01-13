@@ -34,6 +34,7 @@ export default Ember.ObjectController.extend({
   //   }
   // ),
   actions: {
+
     save: function() {
       if (this.get('isValid')) {
         return true;
@@ -42,6 +43,7 @@ export default Ember.ObjectController.extend({
         return false;
       }
     },
+
     addNewMediaElements:function() {
       var _this=this;
 
@@ -51,8 +53,17 @@ export default Ember.ObjectController.extend({
       this.get('mediaUrls').addObject(mediaElement);
 
 
-    }
+    },
+    
+    addNewChoiceElements:function() {
+      var _this=this;
 
+      var choiceElement = this.store.createRecord('choice', {
+        qwizbookPage: _this.get('model'),
+      });
+      this.get('choices').addObject(choiceElement);
+
+    },
 
 }
 

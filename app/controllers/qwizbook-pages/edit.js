@@ -15,7 +15,9 @@ export default Ember.ObjectController.extend({
     var type=this.get('type');
     return (type === "Reference");
   }.property('type'),
+  
   actions: {
+
     save: function() {
       if (this.get('isValid')) {
         return true;
@@ -24,6 +26,7 @@ export default Ember.ObjectController.extend({
         return false;
       }
     },
+
     addNewMediaElements:function() {
       var _this=this;
 
@@ -34,6 +37,17 @@ export default Ember.ObjectController.extend({
 
 
     },
+
+    addNewChoiceElements:function() {
+      var _this=this;
+
+      var choiceElement = this.store.createRecord('choice', {
+        qwizbookPage: _this.get('model'),
+      });
+      this.get('choices').addObject(choiceElement);
+
+    },
+
     cancel: function() {
       this.get('model').rollback();
       return true;
