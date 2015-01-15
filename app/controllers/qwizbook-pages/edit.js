@@ -15,7 +15,7 @@ export default Ember.ObjectController.extend({
     var type=this.get('type');
     return (type === "Reference");
   }.property('type'),
-  
+
   actions: {
 
     save: function() {
@@ -35,6 +35,14 @@ export default Ember.ObjectController.extend({
       });
       this.get('mediaUrls').addObject(mediaElement);
 
+
+    },
+    removeMediaElement:function(mediaElement) {
+      var _this=this;
+      this.get('mediaUrls').removeObject(mediaElement);
+      mediaElement.deleteRecord();
+      
+      console.log(x);
 
     },
 

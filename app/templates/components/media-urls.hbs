@@ -1,0 +1,23 @@
+
+{{#each mediaElement in mediaUrls itemController="media-urls/item"}}
+<div class="well">
+  <div class="pull-right" style="margin-bottom:10px">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default"  {{ action "removeItem" mediaElement }}><i class="fa fa-minus fa-1x"></i></button>
+    </div>
+  </div>
+  <div class="form-group" >
+    <label  class="control-label">Media Type</label>
+    {{view "Ember.Select"
+    content=mediaElement.urlTypes
+    value=mediaElement.type
+    selection=mediaElement.type
+    class="form-control"
+  }}
+  <label  style="margin-top: 10px" class="control-label">Text</label>
+  {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.text }}
+  <label  style="margin-top: 10px" class="control-label">URL</label>
+  {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.mediaUrl }}
+</div>
+</div>
+{{/each}}
