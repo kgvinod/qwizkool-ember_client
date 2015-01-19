@@ -26,7 +26,7 @@
 
         <div class="form-group">
           <label for="pageText" class="control-label">Question Text</label>
-          {{ textarea  class="form-control" type="text" id="pageText"   placeholder="Text" value=text rows="10" }}
+          {{ textarea  class="form-control" type="text" id="pageText"   placeholder="Text" value=text rows="10"}}
         </div>
 
 
@@ -40,26 +40,7 @@
         </div>
       </div>
 
-        {{#each mediaElement in model.mediaUrls itemController="media-urls/item"}}
-          <div class="well">
-            <div class="form-group">
-              <label  class="control-label">Media Type</label>
-              {{view "Ember.Select"
-              content=mediaElement.urlTypes
-              value=mediaElement.type
-              selection=mediaElement.type
-              class="form-control"
-            }}
-            <label  style="margin-top: 10px" class="control-label">Text</label>
-            {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.text }}
-            <label  style="margin-top: 10px" class="control-label">URL</label>
-            {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.mediaUrl }}
-          </div>
-        </div>
-      {{/each}}
-
-      <hr/>
-      {{media-urls mediaUrls=model.mediaUrls removeItem="removeMediaElement"}}
+      {{media-element-list mediaUrls=model.mediaUrls removeItem="removeMediaElement"}}
       <hr/>
 
         <div class="form-group">
@@ -70,28 +51,9 @@
           </div>
         </div>
       </div>
+      {{answer-choice-list answerChoices=model.choices removeItem="removeAnswerChoice"}}
 
-      {{#each choiceElement in model.choices itemController="media-urls/item"}}
-      <div class="well">
-        <h4>Choice:{{_view.contentIndex}} </h4>
 
-        <div class="form-group">
-        <label  style="margin-top: 10px" class="control-label">Answer Text</label>
-        {{ input type="text" class="form-control"  placeholder="URL" value=choiceElement.text }}
-
-        <label  style="margin-top: 10px" class="control-label">Media Text</label>
-        {{ input type="text" class="form-control"  placeholder="URL" value=choiceElement.mediaText }}
-        <label  style="margin-top: 10px" class="control-label">Image URL</label>
-        {{ input type="text" class="form-control"  placeholder="URL" value=choiceElement.mediaUrl }}
-        <div class="checkbox">
-          <label>
-            {{ input type="checkbox"   name="answer" checked=choiceElement.answer }} Answer ?
-          </label>
-        </div>
-
-      </div>
-    </div>
-    {{/each}}
     <hr/>
 
       <div class="form-group">

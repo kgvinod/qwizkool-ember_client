@@ -37,11 +37,12 @@ export default Ember.ObjectController.extend({
 
 
     },
+
     removeMediaElement:function(mediaElement) {
       var _this=this;
       this.get('mediaUrls').removeObject(mediaElement);
       mediaElement.deleteRecord();
-      
+
       console.log(x);
 
     },
@@ -55,7 +56,12 @@ export default Ember.ObjectController.extend({
       this.get('choices').addObject(choiceElement);
 
     },
-
+    removeAnswerChoice:function(choice) {
+      var _this=this;
+      this.get('choices').removeObject(choice);
+      choice.deleteRecord();
+    },
+    
     cancel: function() {
       this.get('model').rollback();
       return true;

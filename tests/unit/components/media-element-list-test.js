@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForComponent('media-urls', 'MediaUrlsComponent', {
+moduleForComponent('media-element-list', 'MediaElementListComponent', {
   // specify the other units that are required for this test
   // needs: ['component:foo', 'helper:bar']
 });

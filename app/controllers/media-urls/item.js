@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  urlTypes: ["Image", "Video", "Sound"],
   typeIsImage: function() {
     var type=this.get('type');
     return (type === "Image");
