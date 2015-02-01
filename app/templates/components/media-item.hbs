@@ -1,0 +1,34 @@
+{{#if media.typeIsImage}}
+  <div class="">
+    <img class="img-responsive img-center" alt="Responsive image" {{bind-attr src="media.mediaUrl" }}>
+    <div class="text-center">
+      <h5>Image: {{media.text}}</h5>
+    </div>
+  </div>
+{{/if}}
+
+
+{{#if media.typeIsVideoOrAudio}}
+  {{#if media.isWideMedia}}
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" {{bind-attr src="media.mediaUrl" }}></iframe>
+    </div>
+  {{else}}
+    <!-- 4:3 aspect ratio -->
+    <div class="embed-responsive embed-responsive-4by3">
+      <iframe class="embed-responsive-item" {{bind-attr src="media.mediaUrl" }}></iframe>
+    </div>
+  {{/if}}
+  {{#if media.typeIsVideo}}
+  <div class="text-center">
+    <h5>Video: {{media.text}}</h5>
+  </div>
+  {{/if}}
+  {{#if media.typeIsAudio}}
+  <div class="text-center">
+    <h5>Audio: {{media.text}}</h5>
+  </div>
+  {{/if}}
+
+{{/if}}

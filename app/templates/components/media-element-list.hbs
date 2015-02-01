@@ -14,6 +14,15 @@
     selection=mediaElement.type
     class="form-control"
   }}
+</div>
+
+{{#if mediaElement.typeIsVideoOrAudio}}
+  {{input type="checkbox" name="mediaElement.wideMedia" checked=mediaElement.wideMedia}}
+  <label  class="control-label">Wide Media?</label>
+  {{/if}}
+
+  <div class="form-group" >
+
   <label  style="margin-top: 10px" class="control-label">Text</label>
   {{ input type="text" class="form-control"  placeholder="URL" value=mediaElement.text }}
   <label  style="margin-top: 10px" class="control-label">URL</label>

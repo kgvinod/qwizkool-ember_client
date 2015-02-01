@@ -40,33 +40,22 @@
               <h4 class="text-left">Description</h4>
               {{/if}}
               <hr/>
-              <p>{{text}}</p>
+              <p class="text-left">{{text}}</p>
             </div>
-            {{!-- <div class="embed">
-            <iframe width="560" height="315" src="//www.youtube.com/embed/ODkQRVKNh-Y" frameborder="0" allowfullscreen></iframe>
-          </div> --}}
+
+
+      <hr/>
+
+
           {{#each mediaElement in model.mediaUrls itemController="media-urls/item"}}
 
-          {{#if mediaElement.typeIsImage}}
-          <div class="well">
-            <img class="img-responsive img-center" alt="Responsive image" {{bind-attr src="mediaElement.mediaUrl" }}>
-            <div class="text-center">
-              <h5>Image: {{mediaElement.text}}</h5>
-            </div>
-          </div>
-          {{/if}}
-          {{#if mediaElement.typeIsVideo}}
-          <div class="">
-            <div class="embed">
-              {{mediaElement.mediaUrl}}
-            </div>
-            <div class="text-center">
-              <h5>Image: {{mediaElement.text}}</h5>
-            </div>
-          </div>
-          {{/if}}
+          {{media-item media=mediaElement }}
+
 
           {{/each}}
+
+          <hr/>
+
 
         </div>
 
