@@ -14,5 +14,32 @@ export default Ember.ObjectController.extend({
 
     return false;
 
-  }.property('mediaType')
+  }.property('mediaType'),
+  typeIsImage: function() {
+    var type=this.get('mediaType');
+    return (type === "Image");
+  }.property('mediaType'),
+  typeIsVideo: function() {
+    var type=this.get('mediaType');
+    return (type === "Video");
+  }.property('mediaType'),
+  typeIsAudio: function() {
+    var type=this.get('mediaType');
+    return (type === "Audio");
+  }.property('mediaType'),
+  typeIsVideoOrAudio: function() {
+    var type=this.get('mediaType');
+    return (type === "Video") || (type === "Audio");
+  }.property('mediaType'),
+  isValid: Ember.computed(
+    'mediaUrl', function() {
+      return !Ember.isEmpty(this.get('mediaUrl'));
+    }
+  ),
+  isWideMedia: function() {
+    var isWide=this.get('wideMedia');
+    return isWide;
+  }.property('wideMedia'),
+  
+
 });

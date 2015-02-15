@@ -56,7 +56,6 @@ export default Ember.ObjectController.extend({
     },
 
     removeMediaElement:function(mediaElement) {
-      var _this=this;
       this.get('mediaUrls').removeObject(mediaElement);
       mediaElement.deleteRecord();
     },
@@ -71,7 +70,6 @@ export default Ember.ObjectController.extend({
 
     },
     removeAnswerChoice:function(choice) {
-      var _this=this;
       this.get('choices').removeObject(choice);
       choice.deleteRecord();
     },

@@ -28,12 +28,40 @@
       class="form-control"
     }}
   </div>
+
+  {{#if answerChoice.typeIsVideoOrAudio}}
+  {{input type="checkbox" name="answerChoice.wideMedia" checked=answerChoice.wideMedia}}
+  <label  class="control-label">Wide Media?</label>
+  <div class="well">
+    <p class=text-left>
+      <ins> <strong>All urls need to be emded type</strong></ins>
+      <p>Sample Urls: </p>
+      <ul class="list-unstyled">
+        <li>Soundcloud url</li>
+        <ul >
+          <li>https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/165018741&amp;\
+            auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true</li>
+          </ul>
+          <li>Vimeo url</li>
+          <ul >
+            <li>//player.vimeo.com/video/118046581?title=0&byline=0&portrait=0</li>
+          </ul>
+
+          <li>Youtube url</li>
+          <ul >
+            <li>https://www.youtube.com/embed/zpOULjyy-n8</li>
+          </ul>
+        </ul>
+      </p>
+    </div>
+    {{/if}}
+
   <div class="form-group" style="margin-top=10px" >
     {{#if answerChoice.isMediaElementRequired }}
     <div class="well" style="background:#FFF">
-    <label  style="margin-top: 10px" class="control-label">Media Text</label>
+    <label  style="margin-top: 10px" class="control-label">Text</label>
     {{ input type="text" class="form-control"  placeholder="URL" value=answerChoice.mediaText }}
-    <label  style="margin-top: 10px" class="control-label">Image URL</label>
+    <label  style="margin-top: 10px" class="control-label">URL</label>
     {{ input type="text" class="form-control"  placeholder="URL" value=answerChoice.mediaUrl }}
   </div>
     {{/if}}

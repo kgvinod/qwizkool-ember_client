@@ -7,4 +7,6 @@ export default DS.Model.extend({
   mediaType:     DS.attr('string',{ defaultValue: "None" }),
   mediaText:     DS.attr('string',{ defaultValue: "" }),
   mediaUrl:      DS.attr('string',{ defaultValue: "" }),
+  wideMedia:     DS.attr('boolean',{ defaultValue: false }),
+  
 });

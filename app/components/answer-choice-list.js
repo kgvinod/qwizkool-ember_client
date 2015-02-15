@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   answerChoices:[],
 
-  urlTypes: ["None","Image", "Video", "Sound"],
+  urlTypes: ["None","Image", "Video", "Audio"],
 
   actions: {
     removeItem: function(item) {
