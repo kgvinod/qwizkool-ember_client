@@ -9,10 +9,9 @@ A short introduction of this app could easily go here.
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js v4.4.0](http://nodejs.org/) 
-* [NPM v2.x] 
-* [Bower](http://bower.io/)
-* [ember-cli v.2.5.x] 
+* [Node.js v4.4.0](http://nodejs.org/)  and NPM v2.x. You may use the node/npm installer script to cleanly re-install https://gist.github.com/brock/5b1b70590e1171c4ab54. In the script, set NODE_VERSION="4.4.0"
+* [Bower v1.7.x](http://bower.io/). npm install bower
+* [ember-cli v.2.5.x] npm install ember-cli
 * You may use the node/npm installer script to cleanly re-install https://gist.github.com/brock/5b1b70590e1171c4ab54
 
 ## Installation
