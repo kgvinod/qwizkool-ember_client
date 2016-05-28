@@ -10,6 +10,7 @@ You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+* You may use the node/npm installer script to cleanly re-install https://gist.github.com/brock/5b1b70590e1171c4ab54
 
 ## Installation
 
